@@ -35,7 +35,7 @@ export default function EventFormat() {
         </div>
 
         {/* Card Grid for Formats */}
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
           {formats.map((feat, index) => {
             const Icon = feat.icon;
             return (
@@ -45,7 +45,7 @@ export default function EventFormat() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.15 }}
-                className="rounded-2xl border border-white/[0.03] bg-slate-950 p-6 md:p-8 space-y-6 flex flex-col justify-between"
+                className="rounded-2xl border border-white/[0.03] bg-slate-950 p-5 sm:p-6 md:p-8 space-y-6 flex flex-col justify-between"
               >
                 <div className="space-y-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/5 text-orange-400 border border-orange-500/10">

@@ -54,25 +54,25 @@ export default function App() {
       <main className="flex-grow mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-24 print:space-y-12 print:max-w-none print:px-0 print:py-0">
         
         {/* SECTION 1: MASTER HERO DISPLAY */}
-        <section id="overview" className="pt-8 space-y-16 scroll-mt-20 print:pt-0">
-          <div className="relative overflow-hidden rounded-3xl border border-white/[0.03] bg-black/45 p-8 md:p-16 shadow-2xl print:border-none print:bg-transparent print:p-0 print:shadow-none">
+        <section id="overview" className="pt-4 sm:pt-8 space-y-12 sm:space-y-16 scroll-mt-20 print:pt-0">
+          <div className="relative overflow-hidden rounded-3xl border border-white/[0.03] bg-black/45 p-5 sm:p-10 md:p-16 shadow-2xl print:border-none print:bg-transparent print:p-0 print:shadow-none">
             
             {/* Glowing backdrops - hidden during print */}
             <div className="absolute top-0 right-0 -mr-24 -mt-24 h-[400px] w-[400px] rounded-full bg-gradient-to-tr from-amber-500/15 to-rose-500/15 blur-[120px] pointer-events-none print:hidden" />
             <div className="absolute -bottom-24 left-1/3 h-[300px] w-[300px] rounded-full bg-orange-500/10 blur-[100px] pointer-events-none print:hidden" />
 
-            <div className="relative max-w-4xl space-y-8">
+            <div className="relative max-w-4xl space-y-6 sm:space-y-8">
               {/* Event Badge */}
-              <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-950/30 px-3.5 py-1.5 text-xs font-bold tracking-wider text-amber-300 backdrop-blur-md uppercase print:border-slate-300 print:text-black print:bg-slate-100">
-                <span className="relative flex h-2 w-2 print:hidden">
+              <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-950/30 px-2.5 py-1 sm:px-3.5 sm:py-1.5 text-[10px] sm:text-xs font-bold tracking-wider text-amber-300 backdrop-blur-md uppercase print:border-slate-300 print:text-black print:bg-slate-100 max-w-full">
+                <span className="relative flex h-2 w-2 shrink-0 print:hidden">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
                 </span>
-                Ratan Tata Innovation Hub • Flagship Summit
+                <span className="truncate">Ratan Tata Innovation Hub • Flagship Summit</span>
               </div>
 
               {/* Epic Main Heading with Sleek Typography */}
-              <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-6xl md:text-7xl leading-tight font-sans print:text-black">
+              <h1 className="text-3xl min-[400px]:text-4xl font-extrabold tracking-tight text-white sm:text-6xl md:text-7xl leading-tight font-sans print:text-black">
                 Tirupati Capital <br />
                 <span className="bg-gradient-to-r from-amber-400 via-[#fb7185] to-orange-400 bg-clip-text text-transparent font-black leading-none print:text-black print:bg-none">
                   Connect 2026
@@ -80,17 +80,17 @@ export default function App() {
               </h1>
 
               {/* Subtitle description with high readability standards */}
-              <p className="text-sm md:text-base leading-relaxed text-slate-400 max-w-3xl font-medium print:text-slate-800">
+              <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-400 max-w-3xl font-medium print:text-slate-800">
                 A high-impact convergence of academic innovation and professional venture capital, designed to transform Tirupati into a central launchpad for the next generation of Indian entrepreneurs.
               </p>
 
               {/* Action triggers - Hidden during print */}
-              <div className="flex flex-wrap gap-4 pt-4 print:hidden">
+              <div className="flex flex-wrap gap-4 pt-2 sm:pt-4 print:hidden">
                 <button
                   onClick={() => scrollToElement('objectives')}
-                  className="group inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 px-6.5 py-4 text-xs font-black uppercase tracking-widest text-white shadow-lg shadow-amber-500/25 transition-all hover:opacity-95 hover:scale-[1.02] cursor-pointer"
+                  className="group inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 px-5 py-3 sm:px-6.5 sm:py-4 text-[10px] sm:text-xs font-black uppercase tracking-widest text-white shadow-lg shadow-amber-500/25 transition-all hover:opacity-95 hover:scale-[1.02] cursor-pointer"
                 >
-                  Explore Objectives <ArrowRight className="h-4.5 w-4.5 transition-transform group-hover:translate-x-1" />
+                  Explore Objectives <ArrowRight className="h-4 w-4 sm:h-4.5 sm:w-4.5 transition-transform group-hover:translate-x-1" />
                 </button>
               </div>
             </div>

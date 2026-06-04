@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 export default function ConclusionSection() {
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-white/[0.04] bg-gradient-to-r from-amber-500/5 via-rose-500/5 to-orange-500/5 p-8 md:p-14 shadow-2xl">
+    <div className="relative overflow-hidden rounded-3xl border border-white/[0.04] bg-gradient-to-r from-amber-500/5 via-rose-500/5 to-orange-500/5 p-5 sm:p-10 md:p-14 shadow-2xl">
       {/* Decorative backing effects */}
       <div className="absolute top-0 right-0 -mr-12 -mt-12 h-64 w-64 bg-amber-500/10 rounded-full blur-[80px]" />
       <div className="absolute bottom-0 left-0 -ml-12 -mb-12 h-64 w-64 bg-orange-500/15 rounded-full blur-[80px]" />

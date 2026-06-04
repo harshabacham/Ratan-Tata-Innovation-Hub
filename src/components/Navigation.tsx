@@ -31,9 +31,9 @@ export default function Navigation({ activeSection }: NavigationProps) {
               loading="lazy"
             />
           </div>
-          <div>
-            <span className="block text-sm font-extrabold tracking-tight text-white sm:text-base">Ratan Tata Innovation Hub</span>
-            <span className="block text-[10px] font-bold tracking-widest uppercase text-amber-400 font-mono">Tirupati Node</span>
+          <div className="min-w-0">
+            <span className="block text-xs sm:text-sm md:text-base font-extrabold tracking-tight text-white truncate max-w-[130px] min-[400px]:max-w-[180px] sm:max-w-none">Ratan Tata Innovation Hub</span>
+            <span className="block text-[8px] sm:text-[10px] font-bold tracking-widest uppercase text-amber-400 font-mono">Tirupati Node</span>
           </div>
         </div>
 
