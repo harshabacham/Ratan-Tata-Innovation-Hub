@@ -20,72 +20,83 @@ export default function Navigation({ activeSection }: NavigationProps) {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/[0.04] bg-slate-950/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollIntoView('overview')}>
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white p-1 shadow-lg shadow-white/5 shrink-0">
-            <img
-              src="https://rtih.co.in/assets/rtih-logo.svg"
-              alt="RTIH Logo"
-              className="h-full w-full object-contain pointer-events-none"
-              loading="lazy"
-            />
+    <div className="sticky top-4 z-50 w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto print:hidden">
+      <header className="w-full rounded-2xl md:rounded-full border border-neutral-800 bg-neutral-950/85 shadow-[0_12px_40px_rgba(0,0,0,0.85)] hover:border-neutral-700/80 transition-all duration-300 backdrop-blur-2xl">
+        <div className="mx-auto flex h-14 items-center justify-between pl-4 pr-3 py-1.5">
+          
+          {/* Logo with high-contrast badge */}
+          <div className="flex items-center gap-3 cursor-pointer select-none" onClick={() => scrollIntoView('overview')}>
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white p-1 shadow-sm shrink-0 border border-neutral-200">
+              <img
+                src="https://rtih.co.in/assets/rtih-logo.svg"
+                alt="RTIH Logo"
+                className="h-full w-full object-contain pointer-events-none"
+                loading="lazy"
+              />
+            </div>
+            <div className="min-w-0">
+              <span className="block text-xs sm:text-sm font-black tracking-tight text-white truncate max-w-[120px] min-[400px]:max-w-[150px] sm:max-w-none font-sans uppercase">Ratan Tata Innovation Hub</span>
+              <span className="block text-[8px] font-black tracking-widest uppercase text-neutral-400 font-mono leading-none">Tirupati Node</span>
+            </div>
           </div>
-          <div className="min-w-0">
-            <span className="block text-xs sm:text-sm md:text-base font-extrabold tracking-tight text-white truncate max-w-[130px] min-[400px]:max-w-[180px] sm:max-w-none">Ratan Tata Innovation Hub</span>
-            <span className="block text-[8px] sm:text-[10px] font-bold tracking-widest uppercase text-amber-400 font-mono">Tirupati Node</span>
+
+          {/* Desktop Navigation Links */}
+          <nav className="hidden md:flex items-center gap-1.5">
+            {menuItems.map((item) => {
+              const Icon = item.icon;
+              const isActive = activeSection === item.id;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => scrollIntoView(item.id)}
+                  className={`flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold tracking-wide uppercase transition-all duration-300 cursor-pointer ${
+                    isActive
+                      ? 'bg-neutral-800 text-white'
+                      : 'text-neutral-400 hover:text-white hover:bg-neutral-900/50'
+                  }`}
+                >
+                  <Icon className="h-3.5 w-3.5" />
+                  {item.name}
+                </button>
+              );
+            })}
+          </nav>
+
+          {/* Action Trigger Button (styled exactly like the white pill in the image) */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => scrollIntoView('format')}
+              className="inline-flex items-center gap-1.5 rounded-full bg-white px-4.5 py-1.8 text-xs font-bold tracking-tight text-black hover:bg-neutral-200 transition-all duration-300 cursor-pointer shadow-[0_4px_12px_rgba(255,255,255,0.1)] active:scale-95"
+            >
+              <span>Explore Formats</span>
+              <span className="font-semibold text-xs">→</span>
+            </button>
+
+            {/* Mobile Nav Trigger Icon shortcuts */}
+            <div className="flex md:hidden space-x-0.5">
+              {menuItems.map((item) => {
+                const Icon = item.icon;
+                const isActive = activeSection === item.id;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollIntoView(item.id)}
+                    title={item.name}
+                    className={`flex h-8 w-8 items-center justify-center rounded-full transition-all cursor-pointer ${
+                      isActive
+                        ? 'bg-neutral-800 text-white'
+                        : 'text-neutral-400 hover:bg-neutral-900 hover:text-white'
+                    }`}
+                  >
+                    <Icon className="h-3.5 w-3.5" />
+                  </button>
+                );
+              })}
+            </div>
           </div>
-        </div>
 
-        <nav className="hidden md:flex space-x-1">
-          {menuItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = activeSection === item.id;
-            return (
-              <button
-                key={item.id}
-                id={`nav-${item.id}`}
-                onClick={() => scrollIntoView(item.id)}
-                className={`relative flex items-center gap-2 rounded-lg px-3.5 py-2 text-xs font-bold tracking-wide transition-all duration-300 cursor-pointer ${
-                  isActive
-                    ? 'bg-white/10 text-white'
-                    : 'text-slate-400 hover:bg-white/[0.03] hover:text-white'
-                }`}
-              >
-                <Icon className={`h-4 w-4 ${isActive ? 'scale-110' : ''}`} />
-                {item.name}
-                {isActive && (
-                  <span className="absolute -bottom-[17px] left-0 h-[2px] w-full bg-amber-400" />
-                )}
-              </button>
-            );
-          })}
-        </nav>
-
-        {/* Mobile quick-nav buttons - responsive tap zones */}
-        <div className="flex md:hidden space-x-1">
-          {menuItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = activeSection === item.id;
-            return (
-              <button
-                key={item.id}
-                id={`nav-mob-${item.id}`}
-                onClick={() => scrollIntoView(item.id)}
-                title={item.name}
-                className={`flex h-9 w-9 items-center justify-center rounded-lg transition-all cursor-pointer ${
-                  isActive
-                    ? 'bg-white/10 text-amber-400'
-                    : 'text-slate-400 hover:bg-white/[0.02]'
-                }`}
-              >
-                <Icon className="h-4 w-4" />
-              </button>
-            );
-          })}
         </div>
-      </div>
-    </header>
+      </header>
+    </div>
   );
 }
-

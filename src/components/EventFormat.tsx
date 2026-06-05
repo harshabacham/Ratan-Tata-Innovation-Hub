@@ -21,15 +21,15 @@ export default function EventFormat() {
   ];
 
   return (
-    <div className="space-y-16 animate-slide-up">
+    <div className="space-y-16 animate-slide-up text-white">
       {/* Event Format Section */}
       <div className="space-y-10">
         <div className="space-y-4">
-          <div className="flex items-center gap-2.5 border-b border-white/[0.04] pb-3">
-            <Layers className="h-4.5 w-4.5 text-orange-400" />
-            <h3 className="text-sm font-bold uppercase tracking-widest text-[#fb7185] font-mono">Format of the Event</h3>
+          <div className="flex items-center gap-2.5 border-b border-neutral-800 pb-3">
+            <Layers className="h-4.5 w-4.5 text-white" />
+            <h3 className="text-xs font-black uppercase tracking-widest text-white font-mono">Format of the Event</h3>
           </div>
-          <p className="text-lg text-slate-300 leading-relaxed font-semibold">
+          <p className="text-lg text-neutral-300 leading-relaxed font-semibold">
             The event follows a structured two-part roadmap designed to drive both action and education:
           </p>
         </div>
@@ -45,31 +45,31 @@ export default function EventFormat() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.15 }}
-                className="rounded-2xl border border-white/[0.03] bg-slate-950 p-5 sm:p-6 md:p-8 space-y-6 flex flex-col justify-between"
+                className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 sm:p-6 md:p-8 space-y-6 flex flex-col justify-between hover:border-white transition-all shadow-sm group"
               >
                 <div className="space-y-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/5 text-orange-400 border border-orange-500/10">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-black group-hover:scale-105 transition-transform">
                     <Icon className="h-5 w-5" />
                   </div>
                   
                   <div className="space-y-2">
-                    <h4 className="text-lg md:text-xl font-extrabold text-white">
+                    <h4 className="text-lg md:text-xl font-extrabold text-white uppercase font-sans">
                       {feat.title}
                     </h4>
-                    <p className="text-sm text-slate-350 leading-relaxed font-medium">
+                    <p className="text-sm text-neutral-400 leading-relaxed font-medium">
                       {feat.desc}
                     </p>
                   </div>
                 </div>
 
                 {feat.topics.length > 0 && (
-                  <div className="mt-4 pt-4 border-t border-white/[0.04] space-y-4">
+                  <div className="mt-4 pt-4 border-t border-neutral-800 space-y-4">
                     {feat.topics.map((t, i) => (
-                      <div key={i} className="flex gap-3.5 items-start">
-                        <span className="h-2 w-2 rounded-full bg-[#fb7185] mt-1.5" />
+                      <div key={i} className="flex gap-3.5 items-start text-left">
+                        <span className="h-2 w-2 rounded-full bg-white mt-1.5 shrink-0" />
                         <div>
-                          <strong className="block text-sm font-bold text-slate-200 uppercase font-mono tracking-wide">{t.title}</strong>
-                          <p className="text-xs text-slate-400 font-medium leading-relaxed">{t.desc}</p>
+                          <strong className="block text-sm font-black text-white uppercase font-mono tracking-wide">{t.title}</strong>
+                          <p className="text-xs text-neutral-400 font-medium leading-relaxed mt-0.5">{t.desc}</p>
                         </div>
                       </div>
                     ))}

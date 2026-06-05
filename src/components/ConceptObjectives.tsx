@@ -18,30 +18,30 @@ export default function ConceptObjectives() {
   ];
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 text-white">
       {/* Concept Header */}
       <div className="space-y-4">
-        <div className="flex items-center gap-2.5 border-b border-white/[0.04] pb-3">
-          <Lightbulb className="h-4 w-4 text-orange-400" />
-          <h3 className="text-xs font-bold uppercase tracking-widest text-[#fb7185] font-mono">Event Concept</h3>
+        <div className="flex items-center gap-2.5 border-b border-neutral-800 pb-3">
+          <Lightbulb className="h-4 w-4 text-white" />
+          <h3 className="text-xs font-black uppercase tracking-widest text-white font-mono">Event Concept</h3>
         </div>
-        <p className="text-base text-slate-350 leading-relaxed font-medium">
+        <p className="text-base text-neutral-305 text-neutral-300 leading-relaxed font-semibold">
           The event serves as a strategic bridge between the innovative spirit of academic-led startups and the pragmatic world of venture capital.
         </p>
       </div>
 
       {/* Purpose block styled as a premium quote/callout block */}
-      <div className="relative overflow-hidden rounded-2xl border border-amber-500/20 bg-amber-950/5 p-5 sm:p-6 md:p-8">
-        <div className="absolute top-0 right-0 h-40 w-40 bg-amber-500/5 blur-3xl pointer-events-none" />
+      <div className="relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 sm:p-6 md:p-8 shadow-sm">
+        <div className="absolute top-0 right-0 h-40 w-40 bg-neutral-900/40 blur-3xl pointer-events-none" />
         <div className="flex items-start gap-3 sm:gap-4">
-          <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
+          <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-xl bg-white text-black border border-white">
             <ShieldCheck className="h-5 w-5" />
           </div>
           <div className="space-y-2 min-w-0">
-            <span className="block text-[10px] font-bold text-amber-400 uppercase tracking-widest font-mono">
+            <span className="block text-[10px] font-black text-white uppercase tracking-widest font-mono">
               Event Purpose
             </span>
-            <p className="text-xs sm:text-sm md:text-base text-slate-100 font-semibold leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-base text-neutral-200 font-bold leading-relaxed">
               To create a high-density networking environment where local innovation is validated by national-level investors, leveraging the institutional credibility of the Ratan Tata Innovation Hub.
             </p>
           </div>
@@ -50,9 +50,9 @@ export default function ConceptObjectives() {
 
       {/* Primary Goals Section */}
       <div className="space-y-6">
-        <div className="flex items-center gap-2.5 border-b border-white/[0.04] pb-3">
-          <Milestone className="h-4 w-4 text-amber-400" />
-          <h3 className="text-xs font-bold uppercase tracking-widest text-[#fb7185] font-mono">Primary Goals</h3>
+        <div className="flex items-center gap-2.5 border-b border-neutral-800 pb-3">
+          <Milestone className="h-4 w-4 text-white" />
+          <h3 className="text-xs font-black uppercase tracking-widest text-white font-mono">Primary Goals</h3>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -63,16 +63,16 @@ export default function ConceptObjectives() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="rounded-2xl border border-white/[0.03] bg-slate-950/40 p-5 sm:p-6 space-y-4 hover:border-amber-500/20 hover:bg-slate-950/80 transition-all group"
+              className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 sm:p-6 space-y-4 hover:border-white hover:shadow-2xl transition-all group"
             >
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-orange-500/5 text-orange-400 border border-orange-500/10 group-hover:bg-gradient-to-r group-hover:from-amber-500 group-hover:to-orange-500 group-hover:text-black transition-all">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-neutral-900 text-white border border-neutral-800 group-hover:bg-white group-hover:text-black transition-all">
                 <Star className="h-4 w-4" />
               </div>
               <div className="space-y-1.5">
-                <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+                <h4 className="text-sm font-black text-white uppercase tracking-wider font-sans">
                   {goal.title}
                 </h4>
-                <p className="text-xs leading-relaxed text-slate-400 font-medium">
+                <p className="text-xs leading-relaxed text-neutral-450 text-neutral-400 font-medium font-sans">
                   {goal.desc}
                 </p>
               </div>

@@ -29,10 +29,10 @@ export default function PartnersSection() {
   return (
     <div className="space-y-8">
       <div className="flex flex-col items-center text-center space-y-3 pb-2">
-        <h3 className="text-2xl font-black tracking-tight text-white sm:text-3xl font-sans">
+        <h3 className="text-2xl font-black tracking-tight text-white sm:text-3xl font-sans uppercase">
           Corporate &amp; Knowledge Partners
         </h3>
-        <p className="text-xs text-slate-400 max-w-xl leading-relaxed">
+        <p className="text-xs text-neutral-400 max-w-xl leading-relaxed">
           Pioneering collaborations driving commercial deployments and scientific validation.
         </p>
       </div>

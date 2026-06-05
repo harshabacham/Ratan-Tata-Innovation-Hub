@@ -1,49 +1,108 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 @theme {
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-space: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
-/* Premium warm amber/bronze ambient design tokens */
+:root {
+  --text-color: #ffffff;
+}
+
+/* Premium clear monochromatic minimalist design tokens with highly immersive grid */
 .ambient-pattern {
+  position: relative;
+  background-color: #030303;
   background-image: 
-    radial-gradient(ellipse 60% 40% at 50% -10%, rgba(245, 158, 11, 0.12), rgba(0, 0, 0, 0)),
-    radial-gradient(circle 350px at 100% 20%, rgba(244, 63, 94, 0.05), rgba(0, 0, 0, 0)),
-    radial-gradient(circle 280px at 0% 70%, rgba(217, 119, 6, 0.04), rgba(0, 0, 0, 0)),
-    linear-gradient(to right, rgba(255, 255, 255, 0.012) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 60%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 100% 100%, 45px 45px, 45px 45px;
+}
+
+/* Beautiful slow drifting deep space cosmic glow indicators */
+@keyframes cosmicFloat1 {
+  0% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+  }
+  33% {
+    transform: translate(80px, -120px) scale(1.2) rotate(45deg);
+  }
+  66% {
+    transform: translate(-100px, 40px) scale(0.85) rotate(-45deg);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes cosmicFloat2 {
+  0% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(-90px, 150px) scale(1.3) rotate(-90deg);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes cosmicFloat3 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(60px, -60px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.cosmic-nebula-1 {
+  animation: cosmicFloat1 35s infinite alternate ease-in-out;
+}
+
+.cosmic-nebula-2 {
+  animation: cosmicFloat2 40s infinite alternate ease-in-out;
+}
+
+.cosmic-nebula-3 {
+  animation: cosmicFloat3 25s infinite alternate ease-in-out;
+}
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.star-interactive {
+  animation: starTwinkle 3s infinite ease-in-out;
 }
 
 .gradient-chip {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(244, 63, 94, 0.03));
+  background: #18181b; /* zinc-900 */
 }
 
 .glow-card {
   position: relative;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.glow-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-  background: radial-gradient(800px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(245, 158, 11, 0.08), transparent 40%);
-}
-
-.glow-card:hover::after {
-  opacity: 1;
+.glow-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.04);
+  border-color: #ffffff !important;
 }
 
 .glow-active {
-  box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(255, 255, 255, 0.08);
+  border-color: #ffffff !important;
 }
 
 /* Subtle slide-up transitions */
@@ -62,17 +121,17 @@
   animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Clean, modern dark scrollbars to eliminate default white tracking */
+/* Clean, modern light scrollbars to eliminate default dark tracking */
 html {
   overflow-x: hidden;
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: rgba(245, 158, 11, 0.25) rgba(2, 6, 23, 0.5); /* Amber thumb and slate dark track for Firefox */
+  scrollbar-color: rgba(255, 255, 255, 0.2) rgba(0, 0, 0, 0.5); /* Monochromatic thumb and light track */
 }
 
 body {
   overflow-x: hidden;
-  background-color: #020617; /* slate-950 */
+  background-color: #000000; /* absolute black background */
 }
 
 /* Chrome, Edge, Safari customization */
@@ -82,17 +141,17 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #020617; /* Match body slate-950 background */
+  background: #000000;
 }
 
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.08);
+::-webkit-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 9999px;
-  border: 2px solid #020617;
+  border: 2px solid #000000;
   transition: background-color 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(245, 158, 11, 0.45); /* Elegant amber highlighted glow state when hovered */
+  background: rgba(255, 255, 255, 0.3);
 }
 

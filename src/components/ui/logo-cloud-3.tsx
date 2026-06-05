@@ -26,19 +26,19 @@ export function LogoCloud({ className, logos, ...props }: LogoCloudProps) {
         {logos.map((logo) => (
           <div
             key={`logo-${logo.alt}`}
-            className="flex items-center gap-4 bg-slate-900/60 hover:bg-slate-900/90 border border-white/[0.06] hover:border-amber-500/30 pl-3 pr-6 py-3 rounded-full transition-all duration-300 select-none shrink-0 shadow-lg hover:shadow-amber-500/5"
+            className="flex items-center gap-4 bg-neutral-950/80 hover:bg-neutral-900/60 border border-neutral-800 hover:border-white pl-3 pr-6 py-3 rounded-full transition-all duration-300 select-none shrink-0 shadow-sm"
           >
             {/* Expanded Premium Circle Logo Container */}
-            <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center p-2.5 overflow-hidden shadow-md shrink-0">
+            <div className="w-14 h-14 rounded-full bg-neutral-900 flex items-center justify-center p-2.5 overflow-hidden border border-neutral-800 shrink-0">
               <img
                 alt={logo.alt}
-                className="max-w-full max-h-full object-contain pointer-events-none"
+                className="max-w-full max-h-full object-contain pointer-events-none transition-all duration-300"
                 loading="lazy"
                 src={logo.src}
               />
             </div>
             {/* Enriched Bold Brand Name Typography */}
-            <span className="text-sm md:text-base font-extrabold text-white tracking-wide whitespace-nowrap">
+            <span className="text-sm md:text-base font-extrabold text-white tracking-wide whitespace-nowrap uppercase font-sans">
               {logo.alt}
             </span>
           </div>
