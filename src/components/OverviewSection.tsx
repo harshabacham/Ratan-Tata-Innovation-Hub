@@ -118,8 +118,7 @@ export default function OverviewSection() {
           </div>
         </div>
       </div>
-
-      {/* Structured Card Grid for Event Overview - Significantly enlarged and made highly premium */}
+      {/* Structured Bento Grid for Event Overview - Redesigned with custom bento-span logic, hover highlights & rich visual grids inspired by 21st.dev */}
       <div className="space-y-8">
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/[0.08] pb-4">
           <div className="flex items-center gap-3">
@@ -128,50 +127,177 @@ export default function OverviewSection() {
               Core Event Intelligence
             </h3>
           </div>
-          <span className="text-xs text-slate-500 font-mono font-medium">Click on nodes to highlight focus fields</span>
+          <div className="flex items-center gap-2">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span className="text-xs text-slate-400 font-mono font-medium">Applications Live</span>
+          </div>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {overviewDetails.map((detail, index) => {
-            const Icon = detail.icon;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.12 }}
-                className={`relative overflow-hidden rounded-2xl border p-6 md:p-8 flex flex-col justify-between transition-all duration-300 group shadow-lg ${detail.color}`}
-              >
-                {/* Glowing edge backdrop shadow */}
-                <div className="absolute top-0 right-0 h-24 w-24 bg-white/[0.02] rounded-full blur-2xl pointer-events-none group-hover:bg-white/[0.05]" />
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 via-[#fb7185] to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity" />
-                
-                <div className="space-y-6">
-                  <div className="flex items-center justify-between">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/[0.04] border border-white/[0.08] group-hover:scale-110 transition-transform">
-                      <Icon className="h-5.5 w-5.5" />
-                    </div>
-                    <span className="text-[10px] font-black tracking-widest font-mono uppercase px-2.5 py-1 rounded-md bg-white/[0.04] text-white">
-                      {detail.badge}
-                    </span>
-                  </div>
-
-                  <div className="space-y-2">
-                    <span className="block text-[10px] sm:text-xs font-black text-slate-500 uppercase tracking-widest font-mono">
-                      {detail.label}
-                    </span>
-                    <h4 className="text-base sm:text-lg md:text-xl font-extrabold text-white leading-snug group-hover:text-amber-300 transition-colors">
-                      {detail.value}
-                    </h4>
-                    <p className="text-xs sm:text-sm text-slate-400 font-medium leading-relaxed mt-2 pt-2 border-t border-white/[0.03]">
-                      {detail.desc}
-                    </p>
-                  </div>
+        {/* Custom Bento Layout Grid */}
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-6">
+          
+          {/* 1. ORGANIZER BENTO BLOCK (Wide Span) */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="relative lg:col-span-4 sm:col-span-2 overflow-hidden rounded-2xl border border-amber-500/20 bg-gradient-to-br from-slate-950 via-slate-900/40 to-black p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 group hover:border-amber-400/40 hover:shadow-[0_0_25px_rgba(245,158,11,0.08)] shadow-lg"
+          >
+            {/* Glowing spot background */}
+            <div className="absolute top-0 right-0 h-40 w-40 bg-amber-500/5 rounded-full blur-3xl pointer-events-none group-hover:bg-amber-500/10 transition-colors" />
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-amber-500 via-amber-400 to-transparent" />
+            
+            <div className="space-y-6">
+              <div className="flex justify-between items-start">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-500/10 border border-amber-500/25 text-amber-400 group-hover:scale-105 transition-transform">
+                  <Building2 className="h-6 w-6" />
                 </div>
-              </motion.div>
-            );
-          })}
+                <span className="text-[10px] font-black tracking-widest font-mono uppercase px-3 py-1.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/10">
+                  State Flagship
+                </span>
+              </div>
+
+              <div className="space-y-3">
+                <span className="block text-[10px] font-black text-slate-500 uppercase tracking-widest font-mono">
+                  Organizer
+                </span>
+                <h4 className="text-xl sm:text-2xl font-black text-white leading-snug group-hover:text-amber-300 transition-colors">
+                  Ratan Tata Innovation Hub (RTIH)
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-400 font-medium leading-relaxed max-w-2xl">
+                  Driving central state-led startup incubation schemes, dynamic policymaking frameworks, and direct lines of acceleration to premium national seed funding.
+                </p>
+              </div>
+
+              {/* Incremental micro bento specifications to look highly designed */}
+              <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/[0.04] text-xs">
+                <div className="space-y-1">
+                  <span className="block text-slate-500 font-mono text-[10px] uppercase font-bold">Key Mandate</span>
+                  <p className="text-slate-300 font-semibold">Decentralized Incubation</p>
+                </div>
+                <div className="space-y-1">
+                  <span className="block text-slate-500 font-mono text-[10px] uppercase font-bold">State Scope</span>
+                  <p className="text-slate-300 font-semibold">Tirupati - Hub Node</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* 2. CO-ORGANIZER BENTO BLOCK (Standard) */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="relative lg:col-span-2 overflow-hidden rounded-2xl border border-rose-500/20 bg-gradient-to-br from-slate-950 via-slate-900/40 to-black p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 group hover:border-rose-400/40 hover:shadow-[0_0_25px_rgba(244,63,94,0.08)] shadow-lg"
+          >
+            <div className="absolute top-0 right-0 h-32 w-32 bg-rose-500/5 rounded-full blur-3xl pointer-events-none group-hover:bg-rose-500/10 transition-colors" />
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-rose-500 to-transparent" />
+
+            <div className="space-y-6">
+              <div className="flex justify-between items-start">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-rose-500/10 border border-rose-500/25 text-rose-400 group-hover:scale-105 transition-transform">
+                  <Zap className="h-6 w-6" />
+                </div>
+                <span className="text-[10px] font-black tracking-widest font-mono uppercase px-3 py-1.5 rounded-full bg-rose-500/10 text-rose-400 border border-rose-500/10">
+                  Co-Organizer
+                </span>
+              </div>
+
+              <div className="space-y-3">
+                <span className="block text-[10px] font-black text-slate-500 uppercase tracking-widest font-mono">
+                  Operational Partner
+                </span>
+                <h4 className="text-lg sm:text-xl font-black text-white leading-snug group-hover:text-rose-400 transition-colors">
+                  Unibazar Technologies
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-400 font-medium leading-relaxed">
+                  Pioneering direct commercial transaction architectures, investor alignment, and robust pitch pipeline management.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* 3. VENUE BENTO BLOCK (Standard Split Grid) */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="relative lg:col-span-3 overflow-hidden rounded-2xl border border-orange-500/20 bg-gradient-to-br from-slate-950 via-slate-900/40 to-black p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 group hover:border-orange-400/40 hover:shadow-[0_0_25px_rgba(249,115,22,0.08)] shadow-lg"
+          >
+            <div className="absolute top-0 right-0 h-32 w-32 bg-orange-500/5 rounded-full blur-3xl pointer-events-none group-hover:bg-orange-500/10 transition-colors" />
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-orange-500 to-transparent" />
+
+            <div className="space-y-6">
+              <div className="flex justify-between items-start">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-500/10 border border-orange-500/25 text-orange-400 group-hover:scale-105 transition-transform">
+                  <MapPin className="h-6 w-6" />
+                </div>
+                <span className="text-[10px] font-black tracking-widest font-mono uppercase px-3 py-1.5 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/10">
+                  Central Arena
+                </span>
+              </div>
+
+              <div className="space-y-3">
+                <span className="block text-[10px] font-black text-slate-500 uppercase tracking-widest font-mono">
+                  Location Venue
+                </span>
+                <h4 className="text-lg sm:text-xl font-black text-white leading-snug group-hover:text-orange-400 transition-colors">
+                  Kachchapi Auditorium
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-400 font-medium leading-relaxed">
+                  Located inside prestigious Tirupati networks. The prime modern arena supporting multi-speaker panel staging, deep research demo stations, and state networking lounges.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* 4. TIMELINE BENTO BLOCK (Standard Split Grid) */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="relative lg:col-span-3 overflow-hidden rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-slate-950 via-slate-900/40 to-black p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 group hover:border-emerald-400/40 hover:shadow-[0_0_25px_rgba(16,185,129,0.08)] shadow-lg"
+          >
+            <div className="absolute top-0 right-0 h-32 w-32 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none group-hover:bg-emerald-500/10 transition-colors" />
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-emerald-500 to-transparent" />
+
+            <div className="space-y-6">
+              <div className="flex justify-between items-start">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 group-hover:scale-105 transition-transform">
+                  <Calendar className="h-6 w-6" />
+                </div>
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/10">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </span>
+                  <span className="text-[10px] font-black tracking-widest font-mono uppercase">
+                    20 June 2026
+                  </span>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <span className="block text-[10px] font-black text-slate-500 uppercase tracking-widest font-mono">
+                  Date Schedule
+                </span>
+                <h4 className="text-lg sm:text-xl font-black text-white leading-snug group-hover:text-emerald-400 transition-colors">
+                  Single-Day High Density
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-400 font-medium leading-relaxed">
+                  Locking in schedules sharply at 09:00 AM on June 20, 2026. Includes interactive panel presentations, Pitchathon live rounds, and structured investor 1-on-1 luncheons.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </div>
