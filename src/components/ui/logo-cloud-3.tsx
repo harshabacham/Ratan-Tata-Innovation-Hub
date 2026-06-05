@@ -18,7 +18,7 @@ export function LogoCloud({ className, logos, ...props }: LogoCloudProps) {
     <div
       {...props}
       className={cn(
-        "overflow-hidden py-4 [mask-image:linear-gradient(to_right,transparent,black_50%,black_50%,transparent)]",
+        "overflow-hidden py-4 [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]",
         className
       )}
     >
@@ -28,8 +28,8 @@ export function LogoCloud({ className, logos, ...props }: LogoCloudProps) {
             key={`logo-${logo.alt}`}
             className="flex items-center gap-4 bg-neutral-950/80 hover:bg-neutral-900/60 border border-neutral-800 hover:border-white pl-3 pr-6 py-3 rounded-full transition-all duration-300 select-none shrink-0 shadow-sm"
           >
-            {/* Expanded Premium Circle Logo Container */}
-            <div className="w-14 h-14 rounded-full bg-neutral-900 flex items-center justify-center p-2.5 overflow-hidden border border-neutral-800 shrink-0">
+            {/* Expanded Premium Circle Logo Container - bg-white preserves pristine original brand colors */}
+            <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center p-2.5 overflow-hidden border border-neutral-200 shrink-0 shadow-[inset_0_2px_4px_rgba(0,0,0,0.06)]">
               <img
                 alt={logo.alt}
                 className="max-w-full max-h-full object-contain pointer-events-none transition-all duration-300"

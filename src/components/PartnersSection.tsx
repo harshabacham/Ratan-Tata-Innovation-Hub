@@ -4,6 +4,10 @@ import { Building2 } from 'lucide-react';
 
 const logos = [
   {
+    src: "https://rtih.co.in/assets/rtih-logo.svg",
+    alt: "Ratan Tata Innovation Hub",
+  },
+  {
     src: "https://www.adani.com/-/media/project/adaniv1/media-kit/news-media-kit-page/3-4.jpg",
     alt: "Adani Group",
   },

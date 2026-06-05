@@ -106,7 +106,7 @@ export default function App() {
               </div>
 
               {/* Epic Centered Main Heading with Space Grotesk Bold and gradient mask styled on both words */}
-              <h1 className="text-5xl sm:text-7xl md:text-[140px] font-display tracking-tighter mb-8 leading-[0.85] md:leading-[0.8] mix-blend-difference select-none uppercase">
+              <h1 className="text-4xl min-[380px]:text-5xl sm:text-7xl md:text-8xl lg:text-[110px] xl:text-[140px] font-display tracking-tighter mb-8 leading-[0.85] md:leading-[0.8] mix-blend-difference select-none uppercase">
                 <span className="text-transparent bg-clip-text bg-gradient-to-b from-[var(--text-color)] to-[var(--text-color)]/20 font-display font-bold block">
                   Tirupati.
                 </span>

@@ -196,7 +196,7 @@ export default function OverviewSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative lg:col-span-2 overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950/60 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 group hover:border-white hover:shadow-[0_8px_30px_rgba(255,255,255,0.02)] shadow-sm"
+            className="relative lg:col-span-2 sm:col-span-1 overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950/60 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 group hover:border-white hover:shadow-[0_8px_30px_rgba(255,255,255,0.02)] shadow-sm"
           >
             <div className="absolute top-0 right-0 h-32 w-32 bg-neutral-900/40 rounded-full blur-3xl pointer-events-none group-hover:bg-neutral-800 transition-colors" />
             <div className="absolute top-0 left-0 w-full h-[2px] bg-white" />
@@ -231,7 +231,7 @@ export default function OverviewSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="relative lg:col-span-3 overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950/60 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 group hover:border-white hover:shadow-[0_8px_30px_rgba(255,255,255,0.02)] shadow-sm"
+            className="relative lg:col-span-3 sm:col-span-1 overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950/60 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 group hover:border-white hover:shadow-[0_8px_30px_rgba(255,255,255,0.02)] shadow-sm"
           >
             <div className="absolute top-0 right-0 h-32 w-32 bg-neutral-900/40 rounded-full blur-3xl pointer-events-none group-hover:bg-neutral-800 transition-colors" />
             <div className="absolute top-0 left-0 w-full h-[2px] bg-white" />
@@ -266,7 +266,7 @@ export default function OverviewSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="relative lg:col-span-3 overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950/60 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 group hover:border-white hover:shadow-[0_8px_30px_rgba(255,255,255,0.02)] shadow-sm"
+            className="relative lg:col-span-3 sm:col-span-2 overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950/60 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 group hover:border-white hover:shadow-[0_8px_30px_rgba(255,255,255,0.02)] shadow-sm"
           >
             <div className="absolute top-0 right-0 h-32 w-32 bg-neutral-900/40 rounded-full blur-3xl pointer-events-none group-hover:bg-neutral-800 transition-colors" />
             <div className="absolute top-0 left-0 w-full h-[2px] bg-white" />
